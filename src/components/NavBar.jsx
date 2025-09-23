@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Menu, X, Palette } from "lucide-react"
+import IndianPaintsLogo from "../assets/IndianPaintsLogo1.png"
+import ImageIPlogo from "../assets/ImageLogoIP.png"
 
 export default function Navbar({ scrollToSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,13 +12,21 @@ export default function Navbar({ scrollToSection }) {
   }
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
-            <Palette className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">Indian Paints</span>
-          </div>
+   <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center h-16">
+      <div className="flex items-center space-x-2">
+        {/* Replace Palette icon with your PNG logo */}
+        <img
+          src={ImageIPlogo} alt="Indian Paints Logo"
+          className="h-10 w-10 object-contain"
+        />
+        <img
+          src={IndianPaintsLogo} alt="Indian Paints Logo"
+          className="h-40 w-40 object-contain"
+        />
+        {/* <span className="text-xl font-bold text-foreground">Indian Paints</span> */}
+      </div>
 
           <div className="hidden md:flex space-x-8">
             {["home", "about", "products", "network", "contact"].map((section) => (
